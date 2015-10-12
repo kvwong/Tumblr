@@ -44,17 +44,16 @@
                                     <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t0d-yX-7u6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tuu-r1-I68">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tuu-r1-I68">
                                 <rect key="frame" x="135" y="529" width="50" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <state key="normal" image="compose_button"/>
                                 <connections>
-                                    <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uvZ-Wv-akP"/>
                                     <segue destination="QQB-Bb-k8m" kind="modal" id="GV7-if-iWo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="baq-BH-C7P">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="baq-BH-C7P">
                                 <rect key="frame" x="212" y="529" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -64,7 +63,7 @@
                                     <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxL-cZ-zXr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iuv-Ob-TXS">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iuv-Ob-TXS">
                                 <rect key="frame" x="270" y="529" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -74,6 +73,11 @@
                                     <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="05x-f3-5gD"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="explore_popup" id="1Na-GK-lql">
+                                <rect key="frame" x="-5" y="465" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -83,6 +87,7 @@
                         <outlet property="accountButton" destination="baq-BH-C7P" id="5KC-GN-gvJ"/>
                         <outlet property="composeButton" destination="tuu-r1-I68" id="LTa-4W-AKc"/>
                         <outlet property="contentView" destination="PDU-kV-N9Z" id="r8i-hc-b7d"/>
+                        <outlet property="exploreHint" destination="1Na-GK-lql" id="a5H-BO-mDx"/>
                         <outlet property="homeButton" destination="ilh-0X-YRw" id="CCA-5f-7Yz"/>
                         <outlet property="searchButton" destination="Cqa-ac-Ugw" id="caf-7F-LC8"/>
                         <outlet property="tabBarBG" destination="qzv-3d-dhb" id="4AS-vK-wWS"/>
@@ -118,12 +123,18 @@
                                 </subviews>
                                 <animations/>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2iy-8Y-Sbq">
+                                <rect key="frame" x="129" y="275" width="61" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="loader" destination="2iy-8Y-Sbq" id="zGI-wO-dxg"/>
                         <outlet property="scrollView" destination="qKz-71-ZeV" id="EX5-eN-cSe"/>
                         <outlet property="searchFeedView" destination="G1g-7j-WO0" id="Xy2-v4-gps"/>
                     </connections>
@@ -178,11 +189,14 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login_form" id="SvS-TJ-SV8">
-                                <rect key="frame" x="10" y="244" width="300" height="132"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TvP-hz-sqN">
+                                <rect key="frame" x="251" y="26" width="69" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                            </imageView>
+                                <connections>
+                                    <segue destination="aAf-KU-jxp" kind="modal" id="VIx-Jw-vmT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -193,20 +207,69 @@
             </objects>
             <point key="canvasLocation" x="597" y="1074"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="VLZ-Sm-IGe">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="aAf-KU-jxp" customClass="LoginViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2dq-vr-qS0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login_form" id="0Yi-d0-ogL">
+                                <rect key="frame" x="10" y="129" width="300" height="132"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="Ufd-Oa-Zs2">
+                                <rect key="frame" x="20" y="135" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="EH3-4H-flB">
+                                <rect key="frame" x="20" y="180" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="902-sQ-eVV">
+                                <rect key="frame" x="10" y="218" width="150" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="onCancel:" destination="aAf-KU-jxp" eventType="touchUpInside" id="MFv-GP-SLV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1450980392" blue="0.20392156859999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailText" destination="Ufd-Oa-Zs2" id="HKx-8Z-TBS"/>
+                        <outlet property="passwordText" destination="EH3-4H-flB" id="hQL-t5-NSH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OOo-Ya-zk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="1724"/>
+        </scene>
         <!--Compose View Controller-->
         <scene sceneID="XoM-Ag-dG3">
             <objects>
-                <viewController storyboardIdentifier="ComposeView" id="QQB-Bb-k8m" customClass="ComposeViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComposeView" modalPresentationStyle="overCurrentContext" id="QQB-Bb-k8m" customClass="ComposeViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qfu-Es-ih1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="o3E-fO-vgS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="516"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="text_icon" id="m5z-fp-qdS">
+                                <rect key="frame" x="20" y="154" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.075260035211860324" green="0.10353198639265827" blue="0.14309106691919193" alpha="0.5" colorSpace="calibratedRGB"/>
-                            </view>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_icon" id="7Bt-dy-oAI">
                                 <rect key="frame" x="123" y="154" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -232,11 +295,6 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="text_icon" id="m5z-fp-qdS">
-                                <rect key="frame" x="20" y="154" width="75" height="95"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <animations/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="U29-sv-FZC">
                                 <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -248,32 +306,79 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.14509803921568629" blue="0.20392156862745098" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="chatButton" destination="zpo-7d-SRy" id="KJJ-4E-a9v"/>
+                        <outlet property="linkButton" destination="Bi2-Xk-tJn" id="RjL-ku-wBe"/>
+                        <outlet property="nevermindButton" destination="U29-sv-FZC" id="Fsi-IT-Me9"/>
+                        <outlet property="photoButton" destination="7Bt-dy-oAI" id="0eq-Pq-VZM"/>
+                        <outlet property="quoteButton" destination="nqE-uc-K3u" id="gOW-mf-LTE"/>
+                        <outlet property="textButton" destination="m5z-fp-qdS" id="x6Z-8j-qtW"/>
+                        <outlet property="videoButton" destination="qmH-Zt-g9w" id="w7S-6D-ECf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXS-TI-xQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162" y="1179"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity-->
         <scene sceneID="hQM-w1-kZs">
             <objects>
-                <viewController storyboardIdentifier="TrendingView" id="wec-MD-pnO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrendingView" title="Activity" id="wec-MD-pnO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="549-3d-Hmb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="explore_popup" id="9Di-vb-H7Q">
-                                <rect key="frame" x="68" y="245" width="185" height="77"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <view contentMode="scaleToFill" id="gia-ID-M0R">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xwI-oy-Pto">
+                                        <rect key="frame" x="44" y="319" width="112" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.39393714734632979" green="0.72829287391226305" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8J3-bs-Emf">
+                                        <rect key="frame" x="164" y="319" width="112" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.25500962642522956" green="0.35862662866149581" blue="0.48500899869109948" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check out this tab when you make a post to see Likes, Reblogs, and new followers." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6b-UG-Tlp">
+                                        <rect key="frame" x="15" y="216" width="291" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.53738547120418856" green="0.53738547120418856" blue="0.53738547120418856" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_icon" id="rm0-oa-Fsd">
+                                        <rect key="frame" x="143" y="168" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
                                 <animations/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Activity" id="BtH-tn-iBv"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJe-N2-h47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

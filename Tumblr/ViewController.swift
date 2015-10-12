@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     @IBOutlet weak var composeButton: UIButton!
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var trendingButton: UIButton!
+    @IBOutlet weak var exploreHint: UIImageView!
     
     
     @IBOutlet weak var tabBarBG: UIView!
@@ -52,6 +53,12 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         
         buttons[selectedIndex].selected = true
         didPressTab(buttons[selectedIndex])
+        
+        UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
+            
+            self.exploreHint.frame.origin.y = 460
+            
+            }, completion: nil)
         
     }
     
@@ -131,6 +138,12 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         contentView.addSubview(vc.view)
         vc.view.backgroundColor = UIColorFromHex(0x334256, alpha: 1.0)
         vc.didMoveToParentViewController(self)
+        
+        if selectedIndex == 1 {
+            exploreHint.alpha = 0
+        } else {
+            exploreHint.alpha = 1
+        }
     }
 
     
